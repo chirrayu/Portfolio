@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CHIRRAYU SHARMA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --midnight: #050a26;
+      --turquoise: #ff1414;
+      --cream: #F6EDE0;
+      --glow: 0 0 10px var(--turquoise);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--midnight);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Georgia', serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 1rem;
+    }
+
+    .hero-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid var(--turquoise);
+      box-shadow: var(--glow);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px rgba(94, 241, 255, 0.3), 0 0 20px rgba(94, 241, 255, 0.2);
+      letter-spacing: 1px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--turquoise);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .quote-box {
+      background: var(--cream);
+      color: var(--midnight);
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      border: 2px solid var(--turquoise);
+      box-shadow: var(--glow);
+      max-width: 600px;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .quote-signature {
+      text-align: right;
+      font-style: italic;
+      color: var(--turquoise);
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .skill-category h3 {
+      color: var(--turquoise);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--turquoise);
+    }
+
+    .skill-bar {
+      height: 6px;
+      background: rgba(10, 15, 44, 0.6);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 0.3rem;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: var(--turquoise);
+      border-radius: 3px;
+      width: 0%;
+      animation: fill 1.5s forwards;
+    }
+
+    @keyframes fill {
+      to { width: var(--percent); }
+    }
+
+    /* ===== TIMELINE ===== */
+    .timeline {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--turquoise);
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.3;
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 100%;
+      margin: 2.5rem 0;
+      padding: 1.5rem;
+      background: var(--midnight);
+      border: 2px solid var(--turquoise);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 16px;
+      background: var(--turquoise);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--turquoise);
+      animation: pulse 2s infinite;
+    }
+
+    .timeline-year {
+      color: var(--turquoise);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .project-card {
+      background: var(--cream);
+      color: var(--midnight);
+      padding: 1.5rem;
+      border: 2px solid var(--turquoise);
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--glow);
+    }
+
+    .project-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: var(--midnight);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--turquoise);
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 0.8rem;
+    }
+
+    .project-link i {
+      margin-left: 6px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-info {
+      padding: 2rem;
+      border: 2px solid var(--turquoise);
+      border-radius: 10px;
+      background: var(--midnight);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      justify-content: center;
+    }
+
+    .contact-item a {
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: var(--turquoise);
+    }
+
+    .contact-icon {
+      color: var(--turquoise);
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      filter: drop-shadow(0 0 5px var(--turquoise));
+    }
+
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--turquoise);
+      cursor: pointer;
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(94, 241, 255, 0.3);
+      color: var(--cream);
+      opacity: 0.8;
+    }
+
+    /* ===== FONT ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-photo">
+      <img src="static/img/profile.jpg" alt="Chirrayu Sharma">
+    </div>
+    <h1 class="hero-title">CHIRRAYU SHARMA</h1>
+    <p class="hero-subtitle">Aspiring Computer Science Engineer | Python, AI, and Future Tech Enthusiast</p>
+    <div class="quote-box">
+      I’m Chirrayu — a computer science student who mixes logic with imagination. 
+      Coding in Python, dreaming in algorithms, and forever scheming the next big build.
+      <div class="quote-signature">— Chirrayu</div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" style="background: var(--midnight);">
+    <div class="container">
+      <h2 style="text-align: center; color: var(--cream); font-size: 2.5rem; margin-bottom: 3rem;">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Technical Skills</h3>
+          <div style="margin-bottom: 1.2rem;"><div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;"><span>Python</span></div><div class="skill-bar"><div class="skill-progress" style="--percent: 85%"></div></div></div>
+          <div style="margin-bottom: 1.2rem;"><div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;"><span>Basic C</span></div><div class="skill-bar"><div class="skill-progress" style="--percent: 60%"></div></div></div>
+          <div style="margin-bottom: 1.2rem;"><div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;"><span>Basic HTML</span></div><div class="skill-bar"><div class="skill-progress" style="--percent: 70%"></div></div></div>
+          <div style="margin-bottom: 1.2rem;"><div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;"><span>SQL</span></div><div class="skill-bar"><div class="skill-progress" style="--percent: 65%"></div></div></div>
+          <div style="margin-bottom: 1.2rem;"><div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;"><span>Excel</span></div><div class="skill-bar"><div class="skill-progress" style="--percent: 75%"></div></div></div>
+        </div>
+        <div class="skill-category">
+          <h3>Soft Skills</h3>
+          <div style="margin-bottom: 1.2rem;"><div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;"><span>Fluent in Hindi & English</span></div><div class="skill-bar"><div class="skill-progress" style="--percent: 95%"></div></div></div>
+          <div style="margin-bottom: 1.2rem;"><div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;"><span>Problem-solving</span></div><div class="skill-bar"><div class="skill-progress" style="--percent: 80%"></div></div></div>
+          <div style="margin-bottom: 1.2rem;"><div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;"><span>Tech-curious</span></div><div class="skill-bar"><div class="skill-progress" style="--percent: 90%"></div></div></div>
+          <div style="margin-bottom: 1.2rem;"><div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;"><span>Leadership traits</span></div><div class="skill-bar"><div class="skill-progress" style="--percent: 70%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline">
+    <div class="container">
+      <h2 style="text-align: center; color: var(--cream); font-size: 2.5rem; margin-bottom: 3rem;">Education Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2025–29</div>
+          <div>B.Tech CSE at UPES</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2024–25</div>
+          <div>Class XII from Maheshwari Public School</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2022–23</div>
+          <div>Class X from Maheshwari Public School</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" style="background: var(--midnight);">
+    <div class="container">
+      <h2 style="text-align: center; color: var(--cream); font-size: 2.5rem; margin-bottom: 3rem;">Projects</h2>
+      <div class="projects-grid">
+        
+        <div class="project-card">
+          <div class="project-title">Hackathon Website</div>
+          <p>A web application for managing hackathon problem statements</p>
+          <a href="https://github.com/chirrayu/problem_statement_app_chirrayu_project" target="_blank" class="project-link">
+            View on GitHub <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-title">C Programming Class Project</div>
+          <p>C programming class project</p>
+          <a href="https://github.com/chirrayu/C_PGM_B34_SAPID_26085" target="_blank" class="project-link">
+            View on GitHub <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 style="text-align: center; color: var(--cream); font-size: 2.5rem; margin-bottom: 3rem;">Contact</h2>
+      <div class="contact-info">
+        <h3 style="color: var(--turquoise); margin-bottom: 1.5rem; text-align: center;">Get In Touch</h3>
+        <div class="contact-item">
+          <i class="fas fa-envelope contact-icon"></i>
+          <span>chirrayusharma@gmail.com</span>
+          <button class="copy-btn" onclick="copyEmail()">Copy</button>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github contact-icon"></i>
+          <a href="https://github.com/chirrayu" target="_blank">github.com/chirrayu</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin contact-icon"></i>
+          <a href="https://www.linkedin.com/in/chirrayu-sharma-37138b375/" target="_blank">linkedin.com/in/chirrayu-sharma-37138b375/</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function copyEmail() {
+      navigator.clipboard.writeText('chirrayusharma@gmail.com').then(() => {
+        alert('Email copied to clipboard!');
+      });
+    }
+  </script>
+</body>
+</html>
