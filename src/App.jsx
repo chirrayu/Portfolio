@@ -258,6 +258,13 @@ function Contact() {
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const dockItems = [
     { icon: <VscHome size={22} />, label: 'Home', onClick: () => setActiveSection('hero') },
@@ -318,9 +325,9 @@ function App() {
 
       <Dock
         items={dockItems}
-        panelHeight={68}
-        baseItemSize={50}
-        magnification={70}
+        panelHeight={isMobile ? 55 : 68}
+        baseItemSize={isMobile ? 40 : 50}
+        magnification={isMobile ? 60 : 70}
       />
     </>
   );

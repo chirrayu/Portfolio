@@ -50,6 +50,19 @@ section {
   padding: 5rem 0;
 }
 
+main {
+  padding-bottom: 120px; /* Space for Dock */
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+  main {
+    padding-bottom: 100px;
+  }
+}
+
 /* ===== HERO ===== */
 #hero {
   min-height: 100vh;
@@ -94,11 +107,24 @@ section {
   letter-spacing: 1px;
 }
 
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
 .hero-subtitle {
   font-size: 1.3rem;
-  color: var(--turquoise);
+  color: var(--primary);
   margin-bottom: 2rem;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
 }
 
 .quote-box {
@@ -115,6 +141,14 @@ section {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .quote-box {
+    font-size: 0.95rem;
+    padding: 1.5rem;
+    margin: 1rem;
+  }
 }
 
 .quote-signature {
@@ -145,6 +179,12 @@ section {
   padding: 2rem;
   border-radius: 16px;
   border: 1px solid var(--glass-border);
+}
+
+@media (max-width: 768px) {
+  .skill-category {
+    padding: 1.5rem;
+  }
 }
 
 .skill-category h3 {
@@ -295,6 +335,22 @@ section {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 12px;
   transition: background 0.2s;
+}
+
+@media (max-width: 768px) {
+  .contact-item {
+    padding: 0.75rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .contact-icon {
+    margin-right: 0;
+  }
+  .copy-btn {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
 }
 
 .contact-item:hover {
