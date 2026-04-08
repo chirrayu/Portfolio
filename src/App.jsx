@@ -31,14 +31,13 @@ function Hero() {
         to={{ opacity: 1, y: 0 }}
         tag="h1"
       />
-      <p className="hero-subtitle">CS Engineering @ UPES | AI, Automation & FinTech</p>
+      <p className="hero-subtitle">CS Engineering @ UPES | AI/ML & Cyber Security</p>
       <div className="quote-box">
-        I am a dedicated Computer Science Engineering student at UPES, India, with a deep interest in software development, 
-        artificial intelligence, and automation systems. From building secure vehicle rental platforms to simulating complex banking systems, 
+        I am a dedicated Computer Science Engineering student at UPES, India, with a deep interest in software development,
+        artificial intelligence, and cyber security. From building secure vehicle rental platforms to simulating complex banking systems,
         I thrive on solving real-world challenges through clean, efficient code.
-        <br /><br />
-        Currently focused on: <strong>AI/ML Applications, Fintech, and Cyber Security.</strong>
-        <div className="quote-signature">— Driven by curiosity, powered by code.</div>
+        <p style={{ marginTop: '1.5rem', fontWeight: '500' }}>Currently focused on: <span style={{ color: 'var(--primary)' }}>Cyber Security</span></p>
+        <div className="quote-signature">— Driven by curiosity, powered by goals.</div>
       </div>
     </section>
   );
