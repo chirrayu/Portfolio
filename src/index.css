@@ -29,6 +29,9 @@ h1, h2, h3, h4 {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
 }
 
 .glass-card {
@@ -105,6 +108,9 @@ main {
   margin-bottom: 0.5rem;
   text-shadow: 0 0 10px rgba(94, 241, 255, 0.3), 0 0 20px rgba(94, 241, 255, 0.2);
   letter-spacing: 1px;
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -118,6 +124,9 @@ main {
   color: var(--primary);
   margin-bottom: 2rem;
   font-weight: 500;
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -141,6 +150,9 @@ main {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-top: 2rem;
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -179,6 +191,9 @@ main {
   padding: 2rem;
   border-radius: 16px;
   border: 1px solid var(--glass-border);
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -282,6 +297,9 @@ main {
 .project-card {
   color: white;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
 }
 
 .project-card:hover {

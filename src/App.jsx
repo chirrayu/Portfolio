@@ -304,7 +304,7 @@ function App() {
           mirrorGradient={false}
           distortAmount={1}
           shineDirection="right"
-          mixBlendMode="lighten"
+          mixBlendMode="screen"
         />
       </div>
 
