@@ -29,6 +29,8 @@ h1, h2, h3, h4 {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
+  position: relative;
+  z-index: 2;
 }
 
 .glass-card {
@@ -105,6 +107,8 @@ main {
   margin-bottom: 0.5rem;
   text-shadow: 0 0 10px rgba(94, 241, 255, 0.3), 0 0 20px rgba(94, 241, 255, 0.2);
   letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -118,6 +122,8 @@ main {
   color: var(--primary);
   margin-bottom: 2rem;
   font-weight: 500;
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -141,6 +147,8 @@ main {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-top: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -179,6 +187,8 @@ main {
   padding: 2rem;
   border-radius: 16px;
   border: 1px solid var(--glass-border);
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -244,6 +254,7 @@ main {
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   text-align: center;
+  z-index: 2;
 }
 
 .timeline-dot {
@@ -257,6 +268,7 @@ main {
   border-radius: 50%;
   box-shadow: 0 0 10px var(--primary);
   animation: pulse 2s infinite;
+  z-index: 3;
 }
 
 .timeline-year {
@@ -282,6 +294,8 @@ main {
 .project-card {
   color: white;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 2;
 }
 
 .project-card:hover {
@@ -400,3 +414,116 @@ footer {
   color: var(--cream);
   opacity: 0.8;
 }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  max-width: 500px;
+  width: 100%;
+  padding: 2.5rem;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card {
+  background: rgba(18, 15, 23, 0.8);
+  backdrop-filter: blur(25px);
+  border-radius: 24px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-title {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.modal-description {
+  color: var(--cream);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.modal-tags .tag {
+  background: rgba(94, 241, 255, 0.1);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(94, 241, 255, 0.2);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.modal-btn.github {
+  background: white;
+  color: black;
+}
+
+.modal-btn.website {
+  background: var(--primary);
+  color: var(--midnight);
+}
+
+.modal-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
