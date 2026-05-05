@@ -125,6 +125,28 @@ function Projects() {
           <BorderGlow
             className="project-card"
             edgeSensitivity={30}
+            glowColor="0 242 255"
+            backgroundColor="transparent"
+            borderRadius={16}
+            glowRadius={50}
+            glowIntensity={1.2}
+          >
+            <div style={{ padding: '1.5rem' }}>
+              <div className="project-title">UPES Complaint Portal</div>
+              <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>Created an advanced complaint management system for UPES students with Flask, MongoDB, and JWT-based authentication, streamlining issue tracking and resolution.</p>
+              <div style={{ marginTop: '1rem', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <span style={{ fontSize: '0.75rem', background: 'rgba(0, 242, 255, 0.15)', color: 'var(--primary)', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(0, 242, 255, 0.2)' }}>Flask</span>
+                <span style={{ fontSize: '0.75rem', background: 'rgba(0, 242, 255, 0.15)', color: 'var(--primary)', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(0, 242, 255, 0.2)' }}>REST API</span>
+                <span style={{ fontSize: '0.75rem', background: 'rgba(0, 242, 255, 0.15)', color: 'var(--primary)', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(0, 242, 255, 0.2)' }}>JWT</span>
+                <span style={{ fontSize: '0.75rem', background: 'rgba(0, 242, 255, 0.15)', color: 'var(--primary)', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(0, 242, 255, 0.2)' }}>MongoDB</span>
+                <span style={{ fontSize: '0.75rem', background: 'rgba(0, 242, 255, 0.15)', color: 'var(--primary)', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(0, 242, 255, 0.2)' }}>GitHub</span>
+              </div>
+            </div>
+          </BorderGlow>
+
+          <BorderGlow
+            className="project-card"
+            edgeSensitivity={30}
             glowColor="188 19 254"
             backgroundColor="transparent"
             borderRadius={16}
@@ -228,10 +250,6 @@ function Contact() {
               <span>India</span>
             </div>
             <div className="contact-item">
-              <i className="fas fa-phone contact-icon"></i>
-              <span>+91-7627090578</span>
-            </div>
-            <div className="contact-item">
               <i className="fas fa-envelope contact-icon"></i>
               <span>chirrayusharma@gmail.com</span>
               <button className="copy-btn" onClick={copyEmail}>Copy</button>
@@ -247,10 +265,6 @@ function Contact() {
           </div>
         </div>
       </section>
-
-      <footer>
-        &copy; {currentYear} Chirrayu Sharma. All rights reserved.
-      </footer>
     </>
   );
 }

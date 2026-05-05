@@ -259,6 +259,8 @@ main {
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   text-align: center;
+  mix-blend-mode: difference;
+  z-index: 2;
 }
 
 .timeline-dot {
@@ -272,6 +274,8 @@ main {
   border-radius: 50%;
   box-shadow: 0 0 10px var(--primary);
   animation: pulse 2s infinite;
+  mix-blend-mode: difference;
+  z-index: 3;
 }
 
 .timeline-year {
@@ -279,6 +283,7 @@ main {
   font-weight: 700;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
+  mix-blend-mode: difference;
 }
 
 /* ===== PROJECTS ===== */
