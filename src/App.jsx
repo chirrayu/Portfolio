@@ -5,6 +5,7 @@ import SplitText from './components/SplitText';
 import BorderGlow from './components/BorderGlow';
 import Dock from './components/Dock';
 import { VscHome, VscTools, VscMortarBoard, VscRocket, VscMail, VscVerified, VscOrganization } from 'react-icons/vsc';
+import LightPillar from './components/LightPillar';
 import './index.css';
 
 const copyEmail = () => {
@@ -106,11 +107,13 @@ function Projects() {
           <BorderGlow
             className="project-card"
             edgeSensitivity={30}
-            glowColor="0 242 255"
-            backgroundColor="transparent"
+            glowColor="180 100 50"
+            backgroundColor="rgba(6, 0, 16, 0.5)"
             borderRadius={16}
             glowRadius={50}
             glowIntensity={1.2}
+            animated={true}
+            colors={['#00f2ff', '#0077ff', '#bc13fe']}
           >
             <div style={{ padding: '1.5rem' }}>
               <div className="project-title">WheelsOnRent</div>
@@ -125,11 +128,13 @@ function Projects() {
           <BorderGlow
             className="project-card"
             edgeSensitivity={30}
-            glowColor="0 242 255"
-            backgroundColor="transparent"
+            glowColor="180 100 50"
+            backgroundColor="rgba(6, 0, 16, 0.5)"
             borderRadius={16}
             glowRadius={50}
             glowIntensity={1.2}
+            animated={true}
+            colors={['#00f2ff', '#38bdf8', '#c084fc']}
           >
             <div style={{ padding: '1.5rem' }}>
               <div className="project-title">UPES Complaint Portal</div>
@@ -147,11 +152,13 @@ function Projects() {
           <BorderGlow
             className="project-card"
             edgeSensitivity={30}
-            glowColor="188 19 254"
-            backgroundColor="transparent"
+            glowColor="280 100 50"
+            backgroundColor="rgba(6, 0, 16, 0.5)"
             borderRadius={16}
             glowRadius={50}
             glowIntensity={1.2}
+            animated={true}
+            colors={['#bc13fe', '#8b5cf6', '#3b82f6']}
           >
             <div style={{ padding: '1.5rem' }}>
               <div className="project-title">Banking System</div>
@@ -166,11 +173,13 @@ function Projects() {
           <BorderGlow
             className="project-card"
             edgeSensitivity={30}
-            glowColor="0 242 255"
-            backgroundColor="transparent"
+            glowColor="180 100 50"
+            backgroundColor="rgba(6, 0, 16, 0.5)"
             borderRadius={16}
             glowRadius={50}
             glowIntensity={1.2}
+            animated={true}
+            colors={['#00f2ff', '#0ea5e9', '#2dd4bf']}
           >
             <div style={{ padding: '1.5rem' }}>
               <div className="project-title">CodeHustle</div>
@@ -305,20 +314,19 @@ function App() {
   return (
     <>
       <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -1 }}>
-        <GradientBlinds
-          gradientColors={['#FF9FFC', '#5227FF']}
-          angle={-75}
-          noise={0.1}
-          blindCount={12}
-          blindMinWidth={110}
-          spotlightRadius={0.5}
-          spotlightSoftness={1.3}
-          spotlightOpacity={1}
-          mouseDampening={0.3}
-          mirrorGradient={false}
-          distortAmount={1}
-          shineDirection="right"
+        <LightPillar
+          topColor="#5227FF"
+          bottomColor="#FF9FFC"
+          intensity={1}
+          rotationSpeed={0.3}
+          glowAmount={0.002}
+          pillarWidth={3}
+          pillarHeight={0.4}
+          noiseIntensity={0.5}
+          pillarRotation={25}
+          interactive={false}
           mixBlendMode="screen"
+          quality="high"
         />
       </div>
 
