@@ -1,0 +1,71 @@
+/* src/styles/boot.css */
+
+/* Global reset for boot screen */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #000; /* Black full-screen background */
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Centered container for the boot screen */
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Logo styling */
+.boot-logo {
+  width: 200px; /* Adjust as needed */
+  height: auto;
+  opacity: 0;
+  animation: fadeInLogo 1.5s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-logo {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLogo {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Progress bar container */
+.boot-progress {
+  width: 60%;
+  max-width: 500px;
+  margin-top: 40px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #fff;
+  width: 0%;
+  transition: width 0.2s linear;
+}
+
+/* When reduced motion is preferred, disable animation on progress */
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill {
+    transition: none;
+  }
+}
