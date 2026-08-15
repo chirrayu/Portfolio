@@ -8,3 +8,5 @@ declare module '*.jpeg';
 declare module '*.svg';
 declare module '*.pdf';
 declare module '*.mp3';
+
+//dd
