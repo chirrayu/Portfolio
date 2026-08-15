@@ -1,5 +1,12 @@
-// Declarations for importing .jsx modules in a TypeScript project
-declare module "*.jsx" {
-  const component: any;
-  export default component;
-}
+// Wildcard declarations for importing .jsx, .js, and asset files in TypeScript
+
+declare module '*.jsx';
+declare module '*.js';
+declare module '*.png';
+declare module '*.jpg';
+declare module '*.jpeg';
+declare module '*.svg';
+declare module '*.pdf';
+declare module '*.mp3';
+
+//dd
